@@ -45,9 +45,9 @@ const Audience: React.FC = () => {
             <div className="absolute top-0 right-0 w-64 h-64 bg-primary opacity-10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
             
             <div className="flex -space-x-4 relative z-10">
-                <img className="w-12 h-12 rounded-full border-2 border-dark" src="https://picsum.photos/100/100?random=1" alt="User" />
-                <img className="w-12 h-12 rounded-full border-2 border-dark" src="https://picsum.photos/100/100?random=2" alt="User" />
-                <img className="w-12 h-12 rounded-full border-2 border-dark" src="https://picsum.photos/100/100?random=3" alt="User" />
+                <img className="w-12 h-12 rounded-full border-2 border-dark" src="https://picsum.photos/100/100?random=1" alt="Membre MealForge 1" />
+                <img className="w-12 h-12 rounded-full border-2 border-dark" src="https://picsum.photos/100/100?random=2" alt="Membre MealForge 2" />
+                <img className="w-12 h-12 rounded-full border-2 border-dark" src="https://picsum.photos/100/100?random=3" alt="Membre MealForge 3" />
                 <div className="w-12 h-12 rounded-full border-2 border-dark bg-slate-700 flex items-center justify-center text-xs font-bold">+2k</div>
             </div>
             <div className="text-center md:text-left flex-1">

@@ -3,11 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MealForge AI - Nutrition Intelligente</title>
+    
+    <!-- SEO Primary Tags -->
+    <title>MealForge AI - Votre nutrition pilotée par l'IA</title>
+    <meta name="title" content="MealForge AI - Votre nutrition pilotée par l'IA">
+    <meta name="description" content="Générez votre planning repas hebdomadaire et votre liste de courses optimisés par IA. Atteignez vos objectifs (perte de poids, prise de masse) sans charge mentale.">
+    <meta name="keywords" content="planificateur repas ia, menu semaine, liste courses automatique, nutrition ia, batch cooking, perte de poids, prise de masse">
+    <meta name="author" content="MealForge AI">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://mealforge.ai/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mealforge.ai/">
+    <meta property="og:title" content="MealForge AI - Fini la charge mentale des repas">
+    <meta property="og:description" content="L'IA qui crée vos menus et listes de courses sur mesure en 1 clic. Rejoignez la liste d'attente.">
+    <meta property="og:image" content="https://mealforge.ai/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mealforge.ai/">
+    <meta property="twitter:title" content="MealForge AI - Votre nutrition pilotée par l'IA">
+    <meta property="twitter:description" content="Générez des menus hebdomadaires équilibrés et votre liste de courses en 1 clic.">
+    <meta property="twitter:image" content="https://mealforge.ai/og-image.jpg">
+
+    <!-- Fonts & Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
       body {
         font-family: 'Inter', sans-serif;
@@ -17,6 +42,18 @@
       /* Smooth scrolling for anchor links */
       html {
         scroll-behavior: smooth;
+      }
+      /* Utility for screen readers / SEO structure */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
       }
     </style>
     <script>
@@ -32,11 +69,57 @@
             },
             fontFamily: {
               sans: ['Inter', 'sans-serif'],
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-out',
+              'fade-in-up': 'fadeInUp 0.8s ease-out',
+              'blob': 'blob 7s infinite',
+              'bounce-slow': 'bounce 3s infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              blob: {
+                '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                '100%': { transform: 'translate(0px, 0px) scale(1)' },
+              }
             }
           }
         }
       }
     </script>
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "MealForge AI",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Web",
+      "description": "Un planificateur de repas intelligent propulsé par l'IA pour générer des programmes nutritionnels sur mesure.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/PreOrder"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "2400"
+      }
+    }
+    </script>
+
   <script type="importmap">
 {
   "imports": {

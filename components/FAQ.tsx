@@ -4,21 +4,32 @@ import { ChevronDown, ChevronUp } from 'lucide-react';
 interface FAQItemProps {
   question: string;
   answer: string;
+  id: string;
 }
 
-const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
+const FAQItem: React.FC<FAQItemProps> = ({ question, answer, id }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const contentId = `faq-content-${id}`;
+  const headerId = `faq-header-${id}`;
 
   return (
     <div className="border-b border-slate-200 last:border-0">
-      <button 
-        className="w-full py-6 flex justify-between items-center text-left focus:outline-none"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <span className="text-lg font-medium text-dark">{question}</span>
-        {isOpen ? <ChevronUp className="w-5 h-5 text-primary" /> : <ChevronDown className="w-5 h-5 text-slate-400" />}
-      </button>
+      <h3>
+        <button 
+          id={headerId}
+          className="w-full py-6 flex justify-between items-center text-left focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-lg"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-expanded={isOpen}
+          aria-controls={contentId}
+        >
+          <span className="text-lg font-medium text-dark pr-4">{question}</span>
+          {isOpen ? <ChevronUp className="w-5 h-5 text-primary flex-shrink-0" aria-hidden="true" /> : <ChevronDown className="w-5 h-5 text-slate-400 flex-shrink-0" aria-hidden="true" />}
+        </button>
+      </h3>
       <div 
+        id={contentId}
+        role="region"
+        aria-labelledby={headerId}
         className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100 mb-6' : 'max-h-0 opacity-0'}`}
       >
         <p className="text-slate-600 leading-relaxed pr-8">{answer}</p>
@@ -48,12 +59,12 @@ const FAQ: React.FC = () => {
   ];
 
   return (
-    <section id="faq" className="py-24 bg-slate-50">
+    <section id="faq" aria-labelledby="faq-title" className="py-24 bg-slate-50">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center text-dark mb-12">Questions Fréquentes</h2>
+        <h2 id="faq-title" className="text-3xl font-bold text-center text-dark mb-12">Questions Fréquentes</h2>
         <div className="bg-white rounded-2xl shadow-sm border border-slate-100 px-6 sm:px-8">
           {faqs.map((faq, idx) => (
-            <FAQItem key={idx} question={faq.question} answer={faq.answer} />
+            <FAQItem key={idx} id={`item-${idx}`} question={faq.question} answer={faq.answer} />
           ))}
         </div>
       </div>

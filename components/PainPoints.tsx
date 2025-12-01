@@ -8,6 +8,9 @@ const PainPoints: React.FC = () => {
         <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2 w-[800px] h-[800px] bg-white rounded-full opacity-60 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Hidden H2 for SEO structure */}
+        <h2 className="sr-only">Pourquoi choisir MealForge AI ? Comparatif Avant / Après</h2>
+
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
           {/* Pain (The Old Way) */}
